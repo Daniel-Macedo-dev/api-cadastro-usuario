@@ -4,18 +4,18 @@ import com.fatec.cadastro_usuario.infrastructure.entities.Usuario;
 import com.fatec.cadastro_usuario.infrastructure.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
     private final UsuarioRepository _repository;
 
+    public UsuarioService(UsuarioRepository repository) {_repository = repository;}
 
-    public UsuarioService(UsuarioRepository repository) {
-        _repository = repository;
-    }
-    public void salvarUsuario(Usuario usuario){
-        _repository.saveAndFlush(usuario);
-    }
+
+
+    public void salvarUsuario(Usuario usuario){_repository.saveAndFlush(usuario);}
 
     public Usuario buscarUsuarioPorEmail(String email){
 
@@ -23,6 +23,10 @@ public class UsuarioService {
                 () -> new RuntimeException("Email não encontrado")
         );
     }
+    public List<Usuario> listarUsuarios(){
+        return _repository.findAll();
+    }
+
     public void deletarUsuarioPorEmail(String email){
         _repository.deleteByEmail(email);
     }

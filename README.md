@@ -14,25 +14,10 @@ Este projeto é uma API RESTful desenvolvida em Java com Spring Boot para gerenc
 
 ## 📁 Estrutura do Projeto
 
-cadastro-usuario/
-├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com/
-│ │ │ └── seuusuario/
-│ │ │ └── cadastro/
-│ │ │ ├── controllers/
-│ │ │ ├── dtos/
-│ │ │ ├── entities/
-│ │ │ ├── repositories/
-│ │ │ ├── services/
-│ │ │ └── CadastroUsuarioApplication.java
-│ │ └── resources/
-│ │ ├── application.properties
-│ │ └── data.sql
-├── pom.xml
-└── README.md
-
+- `business`: regras de negócio
+- `controller`: endpoints REST  
+- `entities`: entidades do banco  
+- `repository`: acesso ao banco  
 
 ## 🚀 Funcionalidades
 

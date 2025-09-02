@@ -14,15 +14,14 @@ public class UsuarioService {
     public UsuarioService(UsuarioRepository repository) {_repository = repository;}
 
 
-
     public void salvarUsuario(Usuario usuario){_repository.saveAndFlush(usuario);}
 
     public Usuario buscarUsuarioPorEmail(String email){
-
         return _repository.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("Email não encontrado")
         );
     }
+
     public List<Usuario> listarUsuarios(){
         return _repository.findAll();
     }
